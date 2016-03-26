@@ -1300,7 +1300,7 @@
                         if (ampm === 'AM' && hour === 12)
                             hour = 0;
                     }
-                    var minute = parseInt(this.container.find('.right .minuteselect').val(), 10);
+                    var minute = 22;//parseInt(this.container.find('.right .minuteselect').val(), 10);
                     var second = this.timePickerSeconds ? parseInt(this.container.find('.right .secondselect').val(), 10) : 0;
                     date = date.clone().hour(hour).minute(minute).second(second);
                 }
