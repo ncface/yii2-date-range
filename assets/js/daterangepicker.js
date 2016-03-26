@@ -1271,7 +1271,7 @@
 
             if (this.endDate || date.isBefore(this.startDate, 'day')) {
                 if (this.timePicker) {
-                  window.alert("anfangneusetzen:"+this.container.find('.left .hourselect').val());
+                  //nc: window.alert("anfangneusetzen:"+this.container.find('.left .hourselect').val());
                     var hour = parseInt(this.container.find('.left .hourselect').val(), 10);
                     if (!this.timePicker24Hour) {
                         var ampm = this.container.find('.left .ampmselect').val();
@@ -1287,12 +1287,12 @@
                 this.endDate = null;
                 this.setStartDate(date.clone());
             } else if (!this.endDate && date.isBefore(this.startDate)) {
-                  window.alert("endeneusetzen1");
+                 //nc:  window.alert("endeneusetzen1");
                 //special case: clicking the same date for start/end, 
                 //but the time of the end date is before the start date
                 this.setEndDate(this.startDate.clone());
             } else {
-                  window.alert("endeneusetzen2");
+                //nc:  window.alert("endeneusetzen2");
                 if (this.timePicker) {
                     var hour = parseInt(this.container.find('.right .hourselect').val(), 10);
                     if (!this.timePicker24Hour) {
@@ -1302,7 +1302,7 @@
                         if (ampm === 'AM' && hour === 12)
                             hour = 0;
                     }
-                    var minute = 22;//parseInt(this.container.find('.right .minuteselect').val(), 10);
+                    var minute = parseInt(this.container.find('.right .minuteselect').val(), 10);
                     var second = this.timePickerSeconds ? parseInt(this.container.find('.right .secondselect').val(), 10) : 0;
                     date = date.clone().hour(hour).minute(minute).second(second);
                 }
