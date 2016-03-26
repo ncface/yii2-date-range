@@ -1271,7 +1271,7 @@
 
             if (this.endDate || date.isBefore(this.startDate, 'day')) {
                 if (this.timePicker) {
-                  window.alert(this.container.find('.left .hourselect').val());
+                  window.alert("achtung:"+this.container.find('.left .hourselect').val());
                     var hour = parseInt(this.container.find('.left .hourselect').val(), 10);
                     if (!this.timePicker24Hour) {
                         var ampm = this.container.find('.left .ampmselect').val();
