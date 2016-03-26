@@ -1271,7 +1271,7 @@
 
             if (this.endDate || date.isBefore(this.startDate, 'day')) {
                 if (this.timePicker) {
-                  window.alert("achtung:"+this.container.find('.left .hourselect').val());
+                  window.alert("anfangneusetzen:"+this.container.find('.left .hourselect').val());
                     var hour = parseInt(this.container.find('.left .hourselect').val(), 10);
                     if (!this.timePicker24Hour) {
                         var ampm = this.container.find('.left .ampmselect').val();
@@ -1287,10 +1287,12 @@
                 this.endDate = null;
                 this.setStartDate(date.clone());
             } else if (!this.endDate && date.isBefore(this.startDate)) {
+                  window.alert("endeneusetzen1");
                 //special case: clicking the same date for start/end, 
                 //but the time of the end date is before the start date
                 this.setEndDate(this.startDate.clone());
             } else {
+                  window.alert("endeneusetzen2");
                 if (this.timePicker) {
                     var hour = parseInt(this.container.find('.right .hourselect').val(), 10);
                     if (!this.timePicker24Hour) {
